@@ -10,11 +10,26 @@ function retnome(){
   return name
 }
 
+const cnl = ()=>{
+  return canal
+}
+
+function Topo(){
+  return (
+    <div>
+      <div>Log</div>
+      <div>{canal}</div>
+      <div>{name}</div>
+    </div>
+  )
+}
+
 export default function Home() {
   return (
     <main>
+      <Topo/>
       <div>{retnome()}</div>
-      <div>{canal}</div>
+      <div>{cnl()}</div>
       <div>Cursos de react Next </div>
       <div>Typescript</div>
       <div>React</div>
