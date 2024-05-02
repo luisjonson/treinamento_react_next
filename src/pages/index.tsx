@@ -1,6 +1,8 @@
 // import Image from "next/image";
 // import { Inter } from "next/font/google";
 
+import { getDisplayName } from "next/dist/shared/lib/utils"
+
 // const inter = Inter({ subsets: ["latin"] });
 
 const name = 'Jonson'
@@ -29,13 +31,24 @@ function Topo(){
 
 export default function Home() {
   return (
-    <main>
+    <div>
       <Topo/>
-      <div>{retnome()}</div>
-      <div>{cnl()}</div>
-      <div>Cursos de react Next </div>
-      <div>Typescript</div>
-      <div>React</div>
-    </main>
+      <div style={testecss}>
+        <div>{retnome()}</div>
+        <div>{cnl()}</div>
+        <div>Cursos de react Next </div>
+        <div>Typescript</div>
+        <div style={{color:'#f00',backgroundColor:'#bbb'}}>React</div>
+      </div>
+    </div>
   );
+}
+
+const testecss={
+  display:'flex',
+  justifyContent:'center',
+  alineItens:'center',
+  color:'#00f',
+  backgroundColor:'#eee',
+  fontSize:'20px'
 }
