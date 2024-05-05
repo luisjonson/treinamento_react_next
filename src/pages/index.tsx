@@ -10,6 +10,13 @@ import Card from "@/components/Card"
 const name = 'Jonson'
 let canal = 'CBFCursos'
 
+function caldDesc(v:number, d:number){
+  return v - d
+}
+
+function caldDesctaxa(v:number, d:number){
+  return v - (d/2)
+}
 function retnome() {
   return name
 }
@@ -17,6 +24,8 @@ function retnome() {
 const cnl = () => {
   return canal
 }
+
+
 
 export default function Home() {
   return (
@@ -30,10 +39,10 @@ export default function Home() {
         <div style={{ color: '#f00', backgroundColor: '#bbb' }}>React</div>
       </div>
       <div className='flex justify-center gap-3'>
-        <Card produto={'Mouse'} valor={49.90}  desconto={10.10}/>
-        <Card produto={'Teclado'} valor={69.90} desconto={0} />
-        <Card produto={'Monitor'} valor={459.90}  desconto={0}/>
-        <Card produto={'CPU'} valor={759.90}  desconto={0}/>
+        <Card produto={'Mouse'} valor={49.90}  desconto={10.10} funcao={caldDesc}/>
+        <Card produto={'Teclado'} valor={69.90} desconto={0} funcao={caldDesc}/>
+        <Card produto={'Monitor'} valor={459.90}  desconto={0} funcao={caldDesc}/>
+        <Card produto={'CPU'} valor={759.90}  desconto={0} funcao={caldDesc}/>
       </div>
     </div>
   );
