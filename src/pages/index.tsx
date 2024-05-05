@@ -30,10 +30,10 @@ export default function Home() {
         <div style={{ color: '#f00', backgroundColor: '#bbb' }}>React</div>
       </div>
       <div className='flex justify-center gap-3'>
-        <Card produto={'Mouse'} valor={'R$49,90'} />
-        <Card produto={'Teclado'} valor={'R$69,90'} />
-        <Card produto={'Monitor'} valor={'R$459,90'} />
-        <Card produto={'CPU'} valor={'R$759,90'} />
+        <Card produto={'Mouse'} valor={49.90}  desconto={10.10}/>
+        <Card produto={'Teclado'} valor={69.90} desconto={0} />
+        <Card produto={'Monitor'} valor={459.90}  desconto={0}/>
+        <Card produto={'CPU'} valor={759.90}  desconto={0}/>
       </div>
     </div>
   );
