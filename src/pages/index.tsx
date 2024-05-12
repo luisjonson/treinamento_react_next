@@ -10,8 +10,43 @@ import Card from "@/components/Card"
 const name = 'Jonson'
 let canal = 'CBFCursos'
 
+const produtos=[{
+  produto:'Mouse',
+  valor:49.9,
+  desconto:0,
+  disponivel:true
+},
+{
+  produto:'Teclado',
+  valor:180,
+  desconto:10,
+  disponivel:true
+},
+{
+  produto:'Monitor',
+  valor:1500,
+  desconto:0,
+  disponivel:true
+},
+{
+  produto:'CPU',
+  valor:700,
+  desconto:100,
+  disponivel:true
+},
+{
+  produto:'Cx.som',
+  valor:100,
+  desconto:0,
+  disponivel:true
+}
+]
+
 function caldDesc(v:number, d:number){
-  return d-v
+
+  console.log("valor:" + v) 
+  console.log("desconto" + d)
+  return v-d
 }
 
 function caldDesctaxa(v:number, d:number){
@@ -39,10 +74,15 @@ export default function Home() {
         <div style={{ color: '#f00', backgroundColor: '#bbb' }}>React</div>
       </div>
       <div className='flex justify-center gap-3'>
-        <Card produto={'Mouse'} valor={49.90}  desconto={10.0} funcao={caldDesc}/>
-        <Card produto={'Teclado'} valor={69.90} desconto={0} funcao={caldDesc}/>
-        <Card produto={'Monitor'} valor={459.90}  desconto={0} funcao={caldDesc}/>
-        <Card produto={'CPU'} valor={759.90}  desconto={50} funcao={caldDesc}/>
+        {
+          produtos.map((e:any)=>{
+            if(e.disponivel){
+              return(
+                <Card produto={e.produto} valor={e.valor} desconto={e.desconto} funcao={caldDesc}/>
+              )
+            }
+          })
+        }
       </div>
     </div>
   );

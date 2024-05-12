@@ -8,7 +8,7 @@ interface CardProps {
 
 export default function (props: CardProps) {
     return (
-        <div className={`flex flex-col border-4 ${props.desconto > 0 ? 'border-red-700':'border-blue-700'} rounded-sm p-1`}>
+        <div className={`flex justify-center flex-col border-4 ${props.desconto > 0 ? 'border-red-700':'border-blue-700'} rounded-sm p-1`}>
             <div>Produto: {props.produto}</div>
             <div>Valor: R${props.valor}</div>
             { props.desconto > 0 && (
@@ -16,7 +16,7 @@ export default function (props: CardProps) {
                     <div>Desconto: R${props.desconto}</div>
                 </div>
             ) }
-            <div>Preço Venda: R${props.funcao(props.desconto,props.valor)}</div>
+            <div>Preço Venda: R${props.funcao(props.valor,props.desconto)}</div>
         </div>
     )
 }
