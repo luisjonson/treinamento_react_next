@@ -11,7 +11,7 @@ const name = 'Jonson'
 let canal = 'CBFCursos'
 
 function caldDesc(v:number, d:number){
-  return v - d
+  return d-v
 }
 
 function caldDesctaxa(v:number, d:number){
@@ -39,10 +39,10 @@ export default function Home() {
         <div style={{ color: '#f00', backgroundColor: '#bbb' }}>React</div>
       </div>
       <div className='flex justify-center gap-3'>
-        <Card produto={'Mouse'} valor={49.90}  desconto={10.10} funcao={caldDesc}/>
+        <Card produto={'Mouse'} valor={49.90}  desconto={10.0} funcao={caldDesc}/>
         <Card produto={'Teclado'} valor={69.90} desconto={0} funcao={caldDesc}/>
         <Card produto={'Monitor'} valor={459.90}  desconto={0} funcao={caldDesc}/>
-        <Card produto={'CPU'} valor={759.90}  desconto={0} funcao={caldDesc}/>
+        <Card produto={'CPU'} valor={759.90}  desconto={50} funcao={caldDesc}/>
       </div>
     </div>
   );
